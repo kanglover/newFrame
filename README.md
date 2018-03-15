@@ -21,29 +21,29 @@
 
 ## 目录结构
 ```shell
-├── build                    // 编译后代码
-├── config                   // 配置
-├── src                      // 源码
-│   ├── api                  // 所有的请求
-│   ├── components           // 全局UI组件
-│   ├── mock                 // 模拟数据
-│   ├── router               // 路由
-│   ├── store                // 状态管理
-│   ├── utils                // 公用的方法、工具
-│   ├── view                 // 界面
-│   ├── App.vue              // 入口界面
-│   ├── main.js              // 入口js
-├── static                   // 静态资源
-│   ├── css                  // css
-│   ├── js                   // js
-│   ├── img                  // img
-├── test                     // 单元测试
-├── .babelrc                 // babel-loader配置
-├── eslintrc.js              // eslint配置
-├── .gitignore               // git忽略项
-├── index.html               // 界面主体
-├── favicon.ico              // favicon图标
-├── package.json             // package.json
+├── build                        // 编译后代码
+├── config                       // 配置
+├── src                          // 源码
+│   ├── assets                   // 资源文件
+│       ├── css                  // css
+│       ├── js                   // js
+│       ├── img                  // img
+│   ├── api                      // 所有的请求
+│   ├── components               // 全局UI组件
+│   ├── mock                     // 模拟数据
+│   ├── router                   // 路由
+│   ├── store                    // 状态管理
+│   ├── utils                    // 公用的方法、工具
+│   ├── view                     // 界面
+│   ├── App.vue                  // 入口界面
+│   ├── main.js                  // 入口js
+├── test                         // 单元测试
+├── .babelrc                     // babel-loader配置
+├── eslintrc.js                  // eslint配置
+├── .gitignore                   // git忽略项
+├── index.html                   // 界面主体
+├── favicon.ico                  // favicon图标
+├── package.json                 // package.json
 ```
 
 ## 构建
