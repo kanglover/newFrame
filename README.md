@@ -28,7 +28,7 @@ o2=>inputoutput: 继续写代码
 e=>end
 st->i->cond1
 cond1(yes)->o2->e
-cond1(no)->o1
+cond1(no)->o1->e
 ```
 
 ## 目录结构
