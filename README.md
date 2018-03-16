@@ -20,15 +20,15 @@
 > 4. 每天离开实验室前提交代码到自己的分支
 
 ```flow
-stst=>start: Start
-e=>end: End
+st=>start: Start
 i=>operation: 切换到自己的分支
-cond1=>condition: 是否需要同步远程代码
-o1=>inputoutput: 同步并合并到当前分支
-o2=>inputoutput: 继续写代码
+cond1=>condition: 不需要同步远程代码?
+o1=>inputoutput: 同步并合并到当前分支 
+o2=>inputoutput: 继续写代码 
+e=>end
 st->i->cond1
-cond1(no)->o2->e
-cond1(yes)->o1->cond1
+cond1(yes)->o2->e
+cond1(no)->o1
 ```
 
 ## 目录结构
