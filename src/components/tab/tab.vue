@@ -10,7 +10,7 @@
     </div>
     <el-tabs v-model="editableTabsValue2" type="card" closable @tab-remove="removeTab"  style="height: 100% !important;">
       <el-tab-pane
-        v-for="(item, index) in editableTabs2"
+        v-for="(item) in editableTabs2"
         :key="item.name"
         :label="item.title"
         :name="item.name"
