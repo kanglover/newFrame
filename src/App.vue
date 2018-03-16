@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <div class="ddd">123</div>
     <router-view/>
   </div>
 </template>
@@ -19,8 +18,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  .ddd {
-    color: blue;
-  }
 }
 </style>
