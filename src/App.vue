@@ -12,6 +12,7 @@ export default {
 <style>
 html, body {
   height: 100vh;
+  background-color: #eff0f4;
 }
 body {
   margin: 0px 0px;

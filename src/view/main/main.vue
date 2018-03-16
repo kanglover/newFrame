@@ -5,15 +5,22 @@
       <el-aside class="nav">
         <navMenu></navMenu>
       </el-aside>
-      <el-main class="content">主体</el-main>
+      <el-main class="content">
+        <el-row style="height: 100%;"><tab></tab></el-row>
+        <!--<el-row>主体</el-row>-->
+      </el-main>
     </el-container>
   </el-container>
 </template>
 <script>
 import navMenu from '@/components/navMenu/navMenu'
+import tab from '@/components/tab/tab'
+import ElRow from 'element-ui/packages/row/src/row'
 export default {
   components: {
-    navMenu
+    ElRow,
+    navMenu,
+    tab
   }
 }
 </script>
@@ -31,6 +38,6 @@ export default {
   .content {
     margin: 30px 10px 10px 10px;
     padding: 0px 0px;
-    background-color: lightblue
+    background-color: white;
   }
 </style>
