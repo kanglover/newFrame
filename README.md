@@ -21,14 +21,22 @@
 
 ```flow
 st=>start: Start
-i=>operation: 切换到自己的分支
-cond1=>condition: 不需要同步远程代码?
-o1=>inputoutput: 同步并合并到当前分支 
-o2=>inputoutput: 继续写代码 
+i=>inputoutput: 输入年份n
+cond1=>condition: n能否被4整除？
+cond2=>condition: n能否被100整除？
+cond3=>condition: n能否被400整除？
+o1=>inputoutput: 输出非闰年
+o2=>inputoutput: 输出非闰年
+o3=>inputoutput: 输出闰年
+o4=>inputoutput: 输出闰年
 e=>end
 st->i->cond1
-cond1(yes)->o2->e
 cond1(no)->o1->e
+cond1(yes)->cond2
+cond2(no)->o3->e
+cond2(yes)->cond3
+cond3(yes)->o2->e
+cond3(no)->o4->e
 ```
 
 ## 目录结构
