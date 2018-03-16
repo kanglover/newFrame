@@ -1,6 +1,7 @@
 <template>
   <div>
-    <el-menu default-active="1-4-1" @open="handleOpen" class="el-menu-vertical-demo" @close="handleClose" :collapse="isCollapse" active-text-color="#ffd04b"  text-color="#fff"  background-color="#545c64">
+    <el-menu default-active="1-4-1" @open="handleOpen" class="el-menu-vertical-demo" @close="handleClose" :collapse="isCollapse"
+             active-text-color="#ffd04b"  text-color="#fff"  background-color="#545c64">
       <div class="el-menu-item is-active expand" @click="change">
         <i class="el-icon-d-caret"></i>
       </div>
