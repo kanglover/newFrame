@@ -21,6 +21,12 @@ export default {
     ElRow,
     navMenu,
     tab
+  },
+  mounted () {
+    this.$get('/Module/constructNewTree?operatorId=2', {})
+      .then(response => {
+        console.log(response)
+      })
   }
 }
 </script>
@@ -36,7 +42,7 @@ export default {
   }
 
   .content {
-    margin: 30px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
     padding: 0px 0px;
     background-color: white;
   }

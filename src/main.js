@@ -5,7 +5,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Element from 'element-ui'
+import {get, post} from './util/fetch'
 
+Vue.prototype.$get = get
+Vue.prototype.$post = post
 Vue.use(Element, { size: 'small' })
 
 Vue.config.productionTip = false
