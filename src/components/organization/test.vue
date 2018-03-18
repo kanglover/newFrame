@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="主页" name="home">主页</el-tab-pane>
+      <el-tab-pane label="主页1" name="home">主页</el-tab-pane>
       <el-tab-pane label="业务管理" name="management">业务管理</el-tab-pane>
     </el-tabs>
 
