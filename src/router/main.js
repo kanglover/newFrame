@@ -6,6 +6,10 @@ export default [
   {
     path: '/main',
     component: () => import('../view/main/main')
+  },
+  {
+    path: '/billCode/billCodeList',
+    component: () => import('../view/configManagement/billCodeList')
   }
 ]
 
