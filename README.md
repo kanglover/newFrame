@@ -67,10 +67,10 @@
 │   ├── mock                     // 模拟数据
 │   ├── router                   // 路由
 │   ├── store                    // 状态管理
-│		├── modules              // 状态管理模块
+│       ├── modules              // 状态管理模块
 │   ├── utils                    // 公用的方法、工具
 │   ├── view                     // 界面
-│		├── login                // 登陆
+│       ├── login                // 登陆
 │       ├── main                 // 主要功能模块
 │           ├── organization     // 组织机构管理
 │           ├── permission       // 权限管理
