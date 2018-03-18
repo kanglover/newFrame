@@ -10,7 +10,7 @@ export default [
   },
   {
     path: '/billCode/billCodeList',
-    component: () => import('../view/config/billCodeList')
+    component: () => import('../view/main/config/billCodeList')
   }
 ]
 

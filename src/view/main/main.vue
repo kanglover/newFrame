@@ -7,7 +7,7 @@
       </el-aside>
       <el-main class="content">
         <el-row style="height: 100%;"><tab></tab></el-row>
-        <!--<el-row>主体</el-row>-->
+        <el-row>主体</el-row>
       </el-main>
       <router-view></router-view>
     </el-container>
