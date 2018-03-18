@@ -16,11 +16,18 @@
 import navMenu from '@/components/navMenu/navMenu'
 import tab from '@/components/tab/tab'
 import ElRow from 'element-ui/packages/row/src/row'
+import { getModules } from '@/api/api'
+
 export default {
   components: {
     ElRow,
     navMenu,
     tab
+  },
+  mounted () {
+    getModules.then(response => {
+      console.log(response)
+    })
   }
 }
 </script>
@@ -36,7 +43,7 @@ export default {
   }
 
   .content {
-    margin: 30px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
     padding: 0px 0px;
     background-color: white;
   }

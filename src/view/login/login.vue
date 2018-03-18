@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="login">
     <el-container>
       <el-header class="header"></el-header>
@@ -21,10 +22,33 @@
         </div>
       </el-main>
     </el-container>
+=======
+  <div>
+    <label for="">用户名</label><input v-model="person.operatorCode"/>
+    <label for="">密码</label><input v-model="person.operatorPassword"/>
+    <button @click="loginIn">登录</button>
+>>>>>>> 400f92e049eb42044a917f7b5f50db93be6a6e4a
   </div>
 </template>
 <script>
 export default {
+  data: function () {
+    return {
+      person: {
+        name: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    loginIn: function () {
+      this.$store.dispatch('loginInSubmit', {
+        operatorCode: this.person.operatorCode,
+        operatorPassword: this.person.operatorPassword,
+        organization: {}
+      })
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
