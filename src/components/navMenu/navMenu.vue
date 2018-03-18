@@ -35,6 +35,10 @@
         <i class="el-icon-setting"></i>
         <span slot="title">导航四</span>
       </el-menu-item>
+      <el-menu-item index="6">
+        <i class="el-icon-view"></i>
+        <span slot="title">视图管理</span>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>
