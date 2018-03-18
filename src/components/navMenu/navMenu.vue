@@ -5,6 +5,18 @@
       <div class="el-menu-item is-active expand" @click="change">
         <i class="el-icon-d-caret"></i>
       </div>
+
+    <el-submenu index="0">
+      <template slot="title">
+        <i class="el-icon-location"></i>
+        <span slot="title">组织机构管理</span>
+      </template>
+      <el-menu-item-group>
+        <el-menu-item index="0-1">单位管理</el-menu-item>
+        <el-menu-item index="0-2">职员管理</el-menu-item>
+        <el-menu-item index="0-2">部门管理</el-menu-item>
+      </el-menu-item-group>
+    </el-submenu>
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-location"></i>
