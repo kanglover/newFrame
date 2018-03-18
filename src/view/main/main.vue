@@ -16,6 +16,8 @@
 import navMenu from '@/components/navMenu/navMenu'
 import tab from '@/components/tab/tab'
 import ElRow from 'element-ui/packages/row/src/row'
+import { getModules } from '@/api/api'
+
 export default {
   components: {
     ElRow,
@@ -23,10 +25,9 @@ export default {
     tab
   },
   mounted () {
-    this.$get('/Module/constructNewTree?operatorId=2', {})
-      .then(response => {
-        console.log(response)
-      })
+    getModules.then(response => {
+      console.log(response)
+    })
   }
 }
 </script>

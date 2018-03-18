@@ -1,13 +1,5 @@
 <template>
   <div  style="height: 100%;">
-    <!--<div style="margin-bottom: 20px;">-->
-      <!--<el-button-->
-        <!--size="small"-->
-        <!--@click="addTab(editableTabsValue2)"-->
-      <!--&gt;-->
-        <!--add tab-->
-      <!--</el-button>-->
-    <!--</div>-->
     <el-tabs v-model="editableTabsValue2" type="card" closable @tab-remove="removeTab"  style="height: 100% !important;">
       <el-tab-pane
         v-for="(item) in editableTabs2"
@@ -31,11 +23,11 @@ export default {
       editableTabs2: [{
         title: 'Tab 1',
         name: '1',
-        content: 'Tab 1 content'
+        content: 'Tab 1 content dddddddddd'
       }, {
         title: 'Tab 2',
         name: '2',
-        content: 'Tab 2 content'
+        content: 'Tab 2 content  aaaaaaa'
       }],
       tabIndex: 2
     }
