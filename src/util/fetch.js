@@ -1,12 +1,8 @@
 import qs from 'qs'
-<<<<<<< HEAD
-// import router from '../router'
 
-=======
 import { Message } from 'element-ui'
 import axios from 'axios'
 // import router from '../router'
->>>>>>> 400f92e049eb42044a917f7b5f50db93be6a6e4a
 const Axios = axios.create({
   baseURL: 'http://localhost:8090/DDD3/',
   timeout: 10000,
