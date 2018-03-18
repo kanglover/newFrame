@@ -8,3 +8,5 @@ export default [
     component: () => import('../view/main/main')
   }
 ]
+
+// 待配置路由拦截
