@@ -23,6 +23,12 @@ module.exports = {
   rules: {
     // allow async-await
     'generator-star-spacing': 'off',
+    "no-mixed-spaces-and-tabs": [2, false],//禁止混用tab和空格
+    "no-regex-spaces": 0,//禁止在正则表达式字面量中使用多个空格
+    "no-spaced-func": 0,//函数调用时 函数名与()之间不能有空格
+    "no-multi-spaces": 0,//不能用多余的空格
+    "no-trailing-spaces": 0,//一行结束后面不要有空格
+    "no-irregular-whitespace": 0,//不能有不规则的空格
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }
