@@ -22,6 +22,7 @@ export default {
         operatorPassword: this.person.operatorPassword,
         organization: {}
       })
+      this.$router.push('/')
     }
   }
 }

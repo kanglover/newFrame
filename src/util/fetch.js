@@ -16,7 +16,6 @@ const Axios = axios.create({
 Axios.interceptors.request.use(
   config => {
     if (config.method === 'post') {
-      console.log(qs)
       config.data = qs.stringify(config.data)
     }
     if (localStorage.token) {

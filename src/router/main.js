@@ -5,6 +5,7 @@ export default [
   },
   {
     path: '/main',
+    name: '首页',
     component: () => import('../view/main/main')
   }
 ]

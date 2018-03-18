@@ -6,8 +6,10 @@
         <navMenu></navMenu>
       </el-aside>
       <el-main class="content">
-        <el-row style="height: 100%;"><tab></tab></el-row>
-        <el-row>主体</el-row>
+        <el-row>
+          <tab></tab>
+
+        </el-row>
       </el-main>
     </el-container>
   </el-container>
@@ -25,8 +27,8 @@ export default {
     tab
   },
   mounted () {
-    getModules.then(response => {
-      console.log(response)
+    getModules().then(data => {
+      console.log(data)
     })
   }
 }
