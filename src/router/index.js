@@ -13,7 +13,7 @@ export default new Router({
     {
       path: '/',
       component: () => import('../view/main/main.vue'),
-      child: [
+      children: [
         ...main
       ]
     }
