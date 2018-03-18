@@ -1,7 +1,7 @@
-import axios from 'axios'
-import { Message } from 'element-ui'
 import qs from 'qs'
-import router from '../router'
+import { Message } from 'element-ui'
+import axios from 'axios'
+// import router from '../router'
 
 const Axios = axios.create({
   baseURL: 'http://localhost:8090/DDD3/',
@@ -17,7 +17,8 @@ const Axios = axios.create({
 Axios.interceptors.request.use(
   config => {
     if (config.method === 'post') {
-      config.data = qs.stringigy(config.data)
+      console.log(qs)
+      config.data = qs.stringify(config.data)
     }
     if (localStorage.token) {
       config.headers.Authorization = localStorage.token
@@ -127,7 +128,7 @@ export function get (url, params = {}) {
 // post请求
 export function post (url, data = {}) {
   return new Promise((resolve, reject) => {
-    Axios.patch(url, data)
+    Axios.post(url, data)
       .then(response => {
         resolve(response.data)
       }, err => {
