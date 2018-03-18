@@ -24,9 +24,9 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
 
+
     "no-mixed-spaces-and-tabs": [0],//关闭禁止混用tab和空格
     "no-multi-spaces": 0,//关闭禁用空格
-
 
     "no-mixed-spaces-and-tabs": [2, false],//禁止混用tab和空格
     "no-regex-spaces": 0,//禁止在正则表达式字面量中使用多个空格
