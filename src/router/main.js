@@ -5,7 +5,12 @@ export default [
     component: () => import('../view/main/main')
   },
   {
+<<<<<<< HEAD
     path: '/',
+=======
+    path: '/main',
+    name: '首页',
+>>>>>>> cll
     component: () => import('../view/main/main')
   },
   {

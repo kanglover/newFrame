@@ -6,7 +6,7 @@ const Axios = axios.create({
   baseURL: 'http://localhost:8090/DDD3/',
   timeout: 10000,
   responseType: 'json',
-  withCredentials: false,
+  withCredentials: true,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
   }
@@ -16,7 +16,6 @@ const Axios = axios.create({
 Axios.interceptors.request.use(
   config => {
     if (config.method === 'post') {
-      console.log(qs)
       config.data = qs.stringify(config.data)
     }
     if (localStorage.token) {

@@ -8,10 +8,8 @@
         :name="item.name"
         style="height: 100% !important;"
       >
-        <div>
-          {{item.content}}
-        </div>
       </el-tab-pane>
+      <router-view></router-view>
     </el-tabs>
   </div>
 </template>
