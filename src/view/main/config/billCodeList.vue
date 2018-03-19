@@ -1,31 +1,34 @@
 <template>
   <div class="row">
-    <div class="col-md-12">
-      <div class="btn-group formBtnGroup">
-        <el-select v-model="value" placeholder="请选择" class="grid-control">
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-select>
-          <span class="titleLabel">
-                    <a class="btn"> <i
-                      class='glyphicon el-icon-circle-plus'></i>
-            新增
-                  </a>
-          </span>
-
-        <span class="titleLabel">
-           <a class="btn" > <i
-             class='glyphicon el-icon-refresh'></i>
-          刷新
-           </a>
-        </span>
-
+    <el-header>
+      <div class="col-md-12">
+        <div class="btn-group formBtnGroup">
+          <el-select v-model="value" placeholder="请选择" class="grid-control">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+          <el-button type="primary"><i
+            class='glyphicon el-icon-circle-plus'></i>新增</el-button>
+          <el-button type="primary"><i
+            class='glyphicon el-icon-refresh'></i>刷新</el-button>
+        </div>
+        <div>
+          <el-select v-model="value" placeholder="请选择" class="selectedValue">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value">
+            </el-option>
+          </el-select>
+          <el-input v-model="input" placeholder="请输入内容" class="inputValue"></el-input>
+        </div>
       </div>
-    </div>
+    </el-header>
     <el-main>
       <el-table
         :data="tableData"
@@ -33,24 +36,49 @@
         style="width: 100%">
         <el-table-column
           prop="date"
-          label="日期"
+          label="编码类型名称"
           width="180">
         </el-table-column>
         <el-table-column
           prop="name"
-          label="姓名"
+          label="编码规则"
           width="180">
         </el-table-column>
         <el-table-column
           prop="address"
-          label="地址">
+          label="实体名称">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="属性名称">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="数据库表名">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="变量">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          label="操作">
         </el-table-column>
       </el-table>
     </el-main>
+    <!--<el-footer>-->
+      <!--<el-pagination-->
+        <!--background-->
+        <!--layout="prev, pager, next"-->
+        <!--:total="10">-->
+      <!--</el-pagination>-->
+    <!--</el-footer>-->
   </div>
 </template>
 
 <script>
+import addButton from '@/components/button/addButton'
+import refreshButton from '@/components/button/refreshButton'
 export default {
   name: 'bill-code-list',
   data () {
@@ -90,6 +118,10 @@ export default {
         address: '上海市普陀区金沙江路 1516 弄'
       }]
     }
+  },
+  components: {
+    addButton,
+    refreshButton
   }
 }
 </script>
@@ -111,29 +143,17 @@ export default {
     -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   }
-  .el-icon-circle-plus,.el-icon-refresh{
-    color: white;
+  button{
+    font-size: 15px;
   }
-  .btn {
-    /*margin: 0 1px;*/
-    /*background-color: #40b2d8;*/
-    /*color: #ffffff;*/
-    margin-left: 5px;
+  .btn-group{
+    width: 70%;
+    float: left;
   }
-  .titleLabel{
-    margin: 0 1px;
-    background-color: #40b2d8;
-    color: #ffffff;
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: normal;
-    line-height: 30px;
-    -webkit-font-smoothing: antialiased;
-    width: 5%;
-    height: 30px;
-    border-radius:5px;
+  .selectedValue{
+    width: 10%;
+  }
+  .inputValue{
+    width: auto;
   }
 </style>
