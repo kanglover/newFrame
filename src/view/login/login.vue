@@ -47,10 +47,11 @@ export default {
   methods: {
     loginIn: function () {
       this.$store.dispatch('loginInSubmit', {
-        operatorCode: this.person.operatorCode,
-        operatorPassword: this.person.operatorPassword,
+        operatorCode: this.user.name,
+        operatorPassword: this.user.password,
         organization: {}
       })
+      this.$router.push('/')
     }
   }
 }
