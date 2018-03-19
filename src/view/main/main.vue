@@ -3,7 +3,7 @@
     <el-header style="height: 7vh;background-color: lightcyan">头</el-header>
     <el-container style="height: 93vh;">
       <el-aside class="nav">
-        <navMenu></navMenu>
+        <navMenu :modules="modules"></navMenu>
       </el-aside>
       <el-main class="content">
         <el-row>
@@ -21,6 +21,11 @@ import ElRow from 'element-ui/packages/row/src/row'
 import { getModules } from '@/api/api'
 
 export default {
+  data: function () {
+    return {
+      modules: {}
+    }
+  },
   components: {
     ElRow,
     navMenu,
@@ -28,7 +33,7 @@ export default {
   },
   mounted () {
     getModules().then(data => {
-      console.log(data)
+      this.modules = data
     })
   }
 }
