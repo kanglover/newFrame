@@ -19,5 +19,5 @@ export function searchOrganization (operatorCode) {
 
 // 获取用户操作模块
 export function getModules () {
-  return get('/Module/constructNewTree?operatorId=2', {})
+  return get('modules', {})
 }

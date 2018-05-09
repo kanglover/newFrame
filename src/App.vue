@@ -16,5 +16,7 @@ html, body {
 }
 body {
   margin: 0px 0px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 </style>

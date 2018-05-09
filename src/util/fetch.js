@@ -3,8 +3,8 @@ import { Message } from 'element-ui'
 import axios from 'axios'
 // import router from '../router'
 const Axios = axios.create({
-  baseURL: 'http://localhost:8090/DDD3/',
-  timeout: 10000,
+  baseURL: 'http://localhost:3000/',
+  timeout: 100000,
   responseType: 'json',
   withCredentials: true,
   headers: {

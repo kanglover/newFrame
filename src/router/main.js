@@ -1,9 +1,4 @@
 export default [
-
-  {
-    path: '/main',
-    component: () => import('../view/main/main')
-  },
   {
     path: '/main',
     name: '首页',
@@ -12,6 +7,10 @@ export default [
   {
     path: '/billCode/billCodeList',
     component: () => import('../view/main/config/billCodeList')
+  },
+  {
+    path: '/student/studentList',
+    component: () => import('../view/main/student/studentList')
   }
 ]
 

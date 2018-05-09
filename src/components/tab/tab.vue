@@ -8,13 +8,14 @@
         :name="item.name"
         style="height: 100% !important;"
       >
-      </el-tab-pane>
       <router-view></router-view>
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
 <script>
 export default {
+  props: [],
   data () {
     return {
       editableTabsValue2: '2',
@@ -31,7 +32,7 @@ export default {
     }
   },
   methods: {
-    addTab (targetName) {
+    addTab (module) {
       let newTabName = ++this.tabIndex + ''
       this.editableTabs2.push({
         title: 'New Tab',

@@ -1,17 +1,23 @@
 <template>
   <el-container>
-    <el-header style="height: 7vh;background-color: lightcyan">头</el-header>
-    <el-container style="height: 93vh;">
+    <el-container style="height: 100vh;">
       <el-aside class="nav">
-        <navMenu :modules="modules"></navMenu>
+        <navMenu :modules="modules" @addTab="onAddTab()" ref="navMenu"></navMenu>
       </el-aside>
       <el-main class="content">
         <el-row>
-          <tab></tab>
+          <el-header class="header">
+            <i class="el-icon-d-arrow-right" @click="collapse($event)"></i>
+            <div class="rightGroup">
 
+            </div>
+          </el-header>
+        </el-row>
+        <el-row class="main">
+          <tab ref="tab"></tab>
         </el-row>
       </el-main>
-      <router-view></router-view>
+      <!--<router-view></router-view>-->
     </el-container>
   </el-container>
 </template>
@@ -32,6 +38,19 @@ export default {
     navMenu,
     tab
   },
+  methods: {
+    onAddTab (module) {
+      this.$refs.tab.addTab(module)
+    },
+    collapse (event) {
+      if (event.target.className === 'el-icon-d-arrow-right') {
+        event.target.className = 'el-icon-d-arrow-left'
+      } else {
+        event.target.className = 'el-icon-d-arrow-right'
+      }
+      this.$refs.navMenu.change()
+    }
+  },
   mounted () {
     getModules().then(data => {
       this.modules = data
@@ -47,12 +66,30 @@ export default {
   }
 
   .header {
-    background-color: lightblue;
+    background-color: #ffffff;
+    color: black;
+    padding-left: 0px;
+    i {
+      line-height: 60px;
+      padding: 0px 20px;
+    }
+    i:hover {
+      background: #dee0e2;
+    }
   }
 
   .content {
-    margin: 10px 10px 10px 10px;
+    margin: 0px 10px 10px 10px;
     padding: 0px 0px;
-    background-color: white;
+    background-color: #f0f2f5;
+    .main {
+      height: 88vh;
+      background: white;
+      margin-top: 12px;
+    }
+  }
+
+  .rightGroup {
+
   }
 </style>
