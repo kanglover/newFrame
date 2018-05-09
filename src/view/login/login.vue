@@ -51,7 +51,6 @@ export default {
         operatorPassword: this.user.password,
         organization: {}
       })
-      this.$router.push('/')
     }
   }
 }
