@@ -69,6 +69,7 @@ export default {
     font-size: 20px;
     font-weight: 600;
     letter-spacing: 2px;
+    padding-left: 10px;
   }
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
@@ -78,6 +79,5 @@ export default {
     position: relative;
     padding-left: 18px;
     padding-right: 0px;
-    text-align: center;
   }
 </style>

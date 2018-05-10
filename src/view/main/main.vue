@@ -2,19 +2,19 @@
   <el-container>
     <el-container style="height: 100vh;">
       <el-aside class="nav">
-        <navMenu :modules="modules" @addTab="onAddTab()" ref="navMenu"></navMenu>
+        <sideBar :modules="modules" @addTab="onAddTab()" ref="sideBar"></sideBar>
       </el-aside>
       <el-main class="content">
         <el-row>
           <el-header class="header">
             <i class="el-icon-d-arrow-right" @click="collapse($event)"></i>
             <div class="rightGroup">
-
             </div>
           </el-header>
         </el-row>
-        <el-row class="main">
-          <tab ref="tab"></tab>
+        <el-row class="mainContentBox">
+          <dynamicNav class="dynamicNav"></dynamicNav>
+          <mainContent class="mainContent"></mainContent>
         </el-row>
       </el-main>
       <!--<router-view></router-view>-->
@@ -22,10 +22,11 @@
   </el-container>
 </template>
 <script>
-import navMenu from '@/components/navMenu/navMenu'
-import tab from '@/components/tab/tab'
+import sideBar from '@/components/sideBar/sideBar'
+import dynamicNav from '@/components/dynamicNav/dynamicNav'
+import mainContent from './components/mainContent.vue'
 import ElRow from 'element-ui/packages/row/src/row'
-import { getModules } from '@/api/api'
+import { getModules } from '@/api/module'
 
 export default {
   data: function () {
@@ -35,8 +36,9 @@ export default {
   },
   components: {
     ElRow,
-    navMenu,
-    tab
+    sideBar,
+    mainContent,
+    dynamicNav
   },
   methods: {
     onAddTab (module) {
@@ -48,7 +50,7 @@ export default {
       } else {
         event.target.className = 'el-icon-d-arrow-right'
       }
-      this.$refs.navMenu.change()
+      this.$refs.sideBar.change()
     }
   },
   mounted () {
@@ -87,6 +89,20 @@ export default {
       background: white;
       margin-top: 12px;
     }
+  }
+
+  .mainContentBox {
+    margin-top: 1vh;
+  }
+
+  .dynamicNav {
+    height: 4vh;
+    background: red;
+  }
+
+  .mainContent {
+    height: 85vh;
+    background: yellow;
   }
 
   .rightGroup {

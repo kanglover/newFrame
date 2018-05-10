@@ -1,4 +1,4 @@
-import {get, post} from '@/util/fetch'
+import {post} from '@/util/fetch'
 // 登录
 export function login (operatorCode, operatorPassword, organization) {
   const data = {
@@ -15,9 +15,4 @@ export function searchOrganization (operatorCode) {
     operatorCode
   }
   return post('/Login/searchOrganization', data)
-}
-
-// 获取用户操作模块
-export function getModules () {
-  return get('modules', {})
 }

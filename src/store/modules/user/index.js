@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import { LOGIN_IN, LOGIN_OUT } from '../../mutations'
-import { login, searchOrganization } from '@/api/api'
+// import { LOGIN_IN, LOGIN_OUT } from '../../mutations'
+// import { login, searchOrganization } from '@/api/login'
 
 const LOGIN_USER = 'currentLoginUser'
 const LOGIN_CODE = 'operatorCode'
@@ -43,7 +43,7 @@ export default {
   },
   actions: {
     loginInSubmit ({commit}, params) {
-      login(params.operatorCode, params.operatorPassword, params.organization)
+      /* login(params.operatorCode, params.operatorPassword, params.organization)
         .then(user => {
           if (user.isLogin === true) {
             searchOrganization(params.operatorCode)
@@ -55,10 +55,10 @@ export default {
           } else {
             //            提示用户密码错误
           }
-        })
+        }) */
     },
     loginOutSubmit ({commit}) {
-      commit(LOGIN_OUT)
+      // commit(LOGIN_OUT)
     }
   }
 }

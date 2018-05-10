@@ -3,7 +3,7 @@ import { Message } from 'element-ui'
 import axios from 'axios'
 // import router from '../router'
 const Axios = axios.create({
-  baseURL: 'http://localhost:3000/',
+  baseURL: process.env.BASE_API,
   timeout: 100000,
   responseType: 'json',
   withCredentials: true,

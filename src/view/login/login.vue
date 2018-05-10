@@ -9,21 +9,21 @@
             <h3>框架系统登录</h3>
           </el-row>
           <el-form ref="user" :model="user" label-width="80px">
-            <el-from-item >
+            <el-form-item>
               <el-input v-model="user.name" placeholder="用户名" size="medium" style="padding-bottom: 5px;">
                 <el-col slot="prefix" class="loginIcon icon-user"></el-col>
               </el-input>
-            </el-from-item>
-            <el-from-item>
+            </el-form-item>
+            <el-form-item>
               <el-input type="password" v-model="user.password" placeholder="密码" size="medium"  style="padding-bottom: 5px;">
                 <el-col slot="prefix" class="loginIcon icon-password"></el-col>
               </el-input>
-            </el-from-item>
+            </el-form-item>
             <el-row style="padding:7px 0 7px 0">
-              <el-from-item>
+              <el-form-item>
                 <el-checkbox label="记住密码" name="type"></el-checkbox>
                 <a class="forget_password">忘记密码</a>
-              </el-from-item>
+              </el-form-item>
             </el-row>
             <el-form-item>
               <el-button type="primary" @click="loginIn" style="width:100%;font-size: 18px;">登录</el-button>
@@ -50,6 +50,8 @@ export default {
         operatorCode: this.user.name,
         operatorPassword: this.user.password,
         organization: {}
+      }).then(() => {
+        this.$router.push({path: '/main'})
       })
     }
   }
