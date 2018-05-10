@@ -1,15 +1,12 @@
 export default [
-  {
-    path: '/main',
-    name: '首页',
-    component: () => import('../view/main/main')
-  },
-  {
-    path: '/billCode/billCodeList',
-    component: () => import('../view/main/config/billCodeList')
-  },
+  // {
+  //   path: '/dashboard',
+  //   name: 'dashboard',
+  //   component: () => import('../view/main/main')
+  // },
   {
     path: '/student/studentList',
+    name: 'student',
     component: () => import('../view/main/student/studentList')
   }
 ]
