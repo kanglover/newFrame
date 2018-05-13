@@ -13,6 +13,7 @@ var data = {
         },{
             id: 1.2,
             name: '教师管理',
+            router: '/teacher/teacherList'
         },{
             id: 1.3,
             name: '学校管理',

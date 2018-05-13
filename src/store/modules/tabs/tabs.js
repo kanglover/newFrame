@@ -1,24 +1,57 @@
 export default {
   state: {
-    tabs: [],
-    activeIndex: ''
+    visitedTabs: [],
+    cachedTabs: []
   },
   mutations: {
-    add_tabs (state, data) {
-      this.state.tabs.push(data)
+    ADD_TAB (state, tab) {
+      tab = tab.route
+      if (state.visitedTabs.some(v => v.path === tab.path)) return
+      state.visitedTabs.push({
+        name: tab.name,
+        path: tab.path,
+        title: tab.meta.title || 'no-name'
+      })
+      if (!tab.meta.noCache) {
+        state.cachedTabs.push(tab.name)
+      }
     },
-    delete_tabs (state, route) {
-      let index = 0
-      for (let tab of state.tabs) {
-        if (tab.route === route) {
+    DELETE_TAB (state, tab) {
+      for (let i = 0; i < state.visitedTabs.length; i++) {
+        if (state.visitedTabs[i].path === tab.path) {
+          state.visitedTabs.splice(i, 1)
           break
         }
-        index++
       }
-      this.state.options.splice(index, 1)
+      for (let i = 0; i < state.cachedTabs.length; i++) {
+        if (state.cachedTabs[i].name === tab.name) {
+          state.cachedTabs.splice(i, 1)
+          break
+        }
+      }
     },
-    set_active_index (state, index) {
-      this.state.activeIndex = index
+    DELETE_OTHER_TABS (state, tab) {
+      for (let i = 0; i < state.visitedTabs.length; i++) {
+        if (state.visitedTabs[i].path === tab.path) {
+          state.visitedTabs = state.visitedTabs.slice(i, i + 1)
+          break
+        }
+      }
+      for (let i = 0; i < state.cachedTabs.length; i++) {
+        if (state.cachedTabs[i].name === tab.name) {
+          state.cachedTabs = state.cachedTabs.slice(i, i + 1)
+          break
+        }
+      }
+    },
+    DELETE_ALL (state) {
+      state.visitedTabs = []
+      state.cachedTabs = []
+    }
+  },
+  actions: {
+    addTab ({ commit }, tab) {
+      commit('ADD_TAB', tab)
     }
   }
 }

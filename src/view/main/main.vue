@@ -2,29 +2,21 @@
   <el-container>
     <el-container style="height: 100vh;">
       <el-aside class="nav">
-        <sideBar :modules="modules" @addTab="onAddTab()" ref="sideBar"></sideBar>
+        <sideBar :modules="modules" @addTab="onAddTab" ref="sideBar"></sideBar>
       </el-aside>
       <el-main class="content">
-        <el-row>
-          <el-header class="header">
-            <i class="el-icon-d-arrow-right" @click="collapse($event)"></i>
-            <div class="rightGroup">
-            </div>
-          </el-header>
-        </el-row>
-        <el-row class="mainContentBox">
-          <dynamicNav class="dynamicNav"></dynamicNav>
-          <mainContent class="mainContent"></mainContent>
-        </el-row>
+        <v-header @sideBarChange="onSideBarChange"></v-header>
+        <dynamicTab ref="tab"></dynamicTab>
+        <mainContent></mainContent>
       </el-main>
-      <!--<router-view></router-view>-->
     </el-container>
   </el-container>
 </template>
 <script>
+import header from './components/header'
 import sideBar from '@/components/sideBar/sideBar'
-import dynamicNav from '@/components/dynamicNav/dynamicNav'
-import mainContent from './components/mainContent.vue'
+import dynamicTab from '@/components/dynamicTab/dynamicTab'
+import mainContent from './components/mainContent'
 import ElRow from 'element-ui/packages/row/src/row'
 import { getModules } from '@/api/module'
 
@@ -38,18 +30,14 @@ export default {
     ElRow,
     sideBar,
     mainContent,
-    dynamicNav
+    dynamicTab,
+    'v-header': header
   },
   methods: {
     onAddTab (module) {
-      this.$refs.tab.addTab(module)
+      this.$refs.tab.addTab(this.$route)
     },
-    collapse (event) {
-      if (event.target.className === 'el-icon-d-arrow-right') {
-        event.target.className = 'el-icon-d-arrow-left'
-      } else {
-        event.target.className = 'el-icon-d-arrow-right'
-      }
+    onSideBarChange () {
       this.$refs.sideBar.change()
     }
   },
@@ -65,44 +53,18 @@ export default {
     width: inherit !important;
     height: 100%;
     background-color: #545c64;
+    overflow-x: hidden;
   }
-
-  .header {
-    background-color: #ffffff;
-    color: black;
-    padding-left: 0px;
-    i {
-      line-height: 60px;
-      padding: 0px 20px;
-    }
-    i:hover {
-      background: #dee0e2;
-    }
-  }
-
   .content {
     margin: 0px 10px 10px 10px;
     padding: 0px 0px;
-    background-color: #f0f2f5;
+    /*background-color: #f0f2f5;*/
+    background-color: white;
     .main {
       height: 88vh;
       background: white;
       margin-top: 12px;
     }
-  }
-
-  .mainContentBox {
-    margin-top: 1vh;
-  }
-
-  .dynamicNav {
-    height: 4vh;
-    background: red;
-  }
-
-  .mainContent {
-    height: 85vh;
-    background: yellow;
   }
 
   .rightGroup {

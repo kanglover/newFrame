@@ -6,7 +6,7 @@
       :data="tableData"
       style="width: 100%">
       <el-table-column
-        label="入学日期"
+        label="入职日期"
         width="180">
         <template slot-scope="scope">
           <i class="el-icon-time"></i>
@@ -92,7 +92,5 @@ export default {
 }
 </script>
 <style>
-.studentLst {
-  margin: 30px 50px;
-}
+
 </style>

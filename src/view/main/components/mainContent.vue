@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="mainContent">
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -10,6 +10,9 @@ export default {
 
 }
 </script>
-<style>
-
+<style scoped lang="scss">
+.mainContent {
+  height: 85vh;
+  background-color: white;
+}
 </style>
