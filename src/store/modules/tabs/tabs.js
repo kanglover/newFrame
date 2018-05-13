@@ -52,6 +52,9 @@ export default {
   actions: {
     addTab ({ commit }, tab) {
       commit('ADD_TAB', tab)
+    },
+    deleteTab ({ commit }, tab) {
+      commit('DELETE_TAB', tab)
     }
   }
 }

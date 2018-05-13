@@ -19,4 +19,10 @@ body {
   font-size: 14px;
   line-height: 1.5;
 }
+
+  .active {
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid #2196f3;
+  }
 </style>
