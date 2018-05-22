@@ -25,6 +25,15 @@ var data = {
         name: '教室管理'
       }]
     }]
+  },
+  {
+    id: 2,
+    name: '动态表单',
+    nodes: [{
+      id: 2.1,
+      name: '表单管理',
+      router: '/formDesign/Addform'
+    }]
   }]
 }
 

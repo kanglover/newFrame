@@ -13,6 +13,9 @@ Vue.prototype.$post = post
 Vue.use(Element, { size: 'small' })
 
 Vue.config.productionTip = false
+router.afterEach((to, from) => {
+  store.dispatch('addTab', {route: to})
+})
 
 /* eslint-disable no-new */
 new Vue({

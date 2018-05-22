@@ -1,6 +1,6 @@
 <template>
   <div class="studentLst">
-    <el-button type="primary">新增</el-button>
+   <!-- <el-button type="primary">新增</el-button>
     <el-button type="primary">导入</el-button>
     <el-table
       :data="tableData"
@@ -50,12 +50,18 @@
             @click="handleDelete(scope.$index, scope.row)">删除</el-button>
         </template>
       </el-table-column>
-    </el-table>
+    </el-table>-->
+    12
+<dynamicForm>45</dynamicForm>
   </div>
 </template>
 
 <script>
+import dynamicForm from '@/components/dynamicForm/dynamicForm.vue'
 export default {
+  components: {
+    dynamicForm
+  },
   data () {
     return {
       tableData: [{
