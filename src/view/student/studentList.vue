@@ -1,10 +1,9 @@
 <template>
   <div class="studentLst">
-    <el-button type="primary">新增</el-button>
+    <el-button type="primary" @click="add()">新增</el-button>
     <el-button type="primary">导入</el-button>
     <el-table
-      :data="tableData"
-      style="width: 100%">
+      :data="tableData" style="width: 100%">
       <el-table-column
         label="入学日期"
         width="180">
@@ -87,6 +86,9 @@ export default {
     },
     handleDelete (index, row) {
       console.log(index, row)
+    },
+    add() {
+      this.$router.push('studentAdd')
     }
   }
 }

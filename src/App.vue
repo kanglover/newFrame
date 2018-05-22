@@ -22,7 +22,7 @@ body {
 
   .active {
     text-decoration: none;
-    color: black;
+    color: #2196f3;
     border-bottom: 2px solid #2196f3;
   }
 </style>
