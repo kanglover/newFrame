@@ -1,5 +1,4 @@
 var express = require('express')
-var router = express.Router()
 
 var data = {
   name: 'modules',
@@ -37,8 +36,12 @@ var data = {
   }]
 }
 
-router.get('/', function (req, res) {
-  res.end(JSON.stringify(data))
-})
+module.exports = function() {
+  var router = express.Router()
 
-module.exports = router
+  router.get('/getAll', function (req, res) {
+    res.end(JSON.stringify(data))
+  })
+
+  return router
+}
