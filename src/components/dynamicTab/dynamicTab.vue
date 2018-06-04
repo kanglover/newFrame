@@ -33,7 +33,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
   .dynamicNav {
     height: 4vh;
     background: white;

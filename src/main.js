@@ -10,7 +10,7 @@ import {get, post} from './util/fetch'
 
 Vue.prototype.$get = get
 Vue.prototype.$post = post
-Vue.use(Element, { size: 'small' })
+Vue.use(Element, {size: 'small'})
 
 Vue.config.productionTip = false
 router.afterEach((to, from) => {
