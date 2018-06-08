@@ -44,7 +44,7 @@ export default {
 </script>
 <style scoped>
 .item {
-  width: 30%;
-  margin: 10px auto;
-}
+   width: 30%;
+   margin: 10px auto;
+ }
 </style>
