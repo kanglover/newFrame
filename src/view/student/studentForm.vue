@@ -23,6 +23,7 @@
 <script>
 import {save} from '@/api/student'
 export default {
+  name: 'studentAddForm',
   data() {
     return {
       form: {
@@ -37,7 +38,11 @@ export default {
       save(this.form)
     },
     back() {
-      console.log('返回')
+      this.$store.dispatch('deleteTab', {
+        route: this.$route
+      }).then(() => {
+        this.$router.back()
+      })
     }
   }
 }
