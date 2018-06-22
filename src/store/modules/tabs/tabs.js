@@ -7,13 +7,15 @@ export default {
     ADD_TAB (state, tab) {
       tab = tab.route
       if (state.visitedTabs.some(v => v.path === tab.path)) return
-      state.visitedTabs.push({
-        name: tab.name,
-        path: tab.path,
-        title: tab.meta.title || 'no-name'
-      })
-      if (!tab.meta.noCache) {
-        state.cachedTabs.push(tab.name)
+      if (tab.meta && tab.meta.title) {
+        state.visitedTabs.push({
+          name: tab.name,
+          path: tab.path,
+          title: tab.meta.title || 'no-name'
+        })
+        if (!tab.meta.noCache) {
+          state.cachedTabs.push(tab.name)
+        }
       }
     },
     DELETE_TAB (state, tab) {

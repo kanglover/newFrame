@@ -25,4 +25,8 @@ body {
     color: #2196f3;
     border-bottom: 2px solid #2196f3;
   }
+
+  #app {
+    height: 100%;
+  }
 </style>
