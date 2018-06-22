@@ -55,6 +55,7 @@
 
 <script>
 export default {
+  name: 'studentList',
   data () {
     return {
       tableData: [{

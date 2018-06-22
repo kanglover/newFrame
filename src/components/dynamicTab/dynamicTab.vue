@@ -19,8 +19,11 @@ export default {
         let title = a.getAttribute('title')
         let name = a.getAttribute('name')
         let path = a.getAttribute('path')
-        let tab = {name, path, title}
-        this.$store.dispatch('deleteTab', tab)
+        this.$store.dispatch('deleteTab', {
+          tab: {name, path, title}
+        }).then(() => {
+          this.$router.push(this.$store.state.tabs.visitedTabs[this.$store.state.tabs.visitedTabs.length - 1])
+        })
       }
       event.preventDefault()
       event.stopPropagation()

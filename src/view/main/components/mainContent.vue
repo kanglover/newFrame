@@ -1,7 +1,7 @@
 <template>
   <section class="mainContent">
     <transition name="fade" mode="out-in">
-      <keep-alive>
+      <keep-alive :include="getInclueds">
         <router-view></router-view>
       </keep-alive>
     </transition>
@@ -9,7 +9,11 @@
 </template>
 <script>
 export default {
-
+  computed: {
+    getInclueds () {
+      return this.$store.state.tabs.cachedTabs.toString()
+    }
+  }
 }
 </script>
 <style scoped lang="scss">
