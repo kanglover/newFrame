@@ -1,37 +1,24 @@
 <template>
-  <div class="login">
-    <el-container>
-      <el-header class="header"></el-header>
-      <el-main class="main">
-        <div class="loginBox el-col-lg-6 el-col-md-offset-14">
-          <el-row class="head"></el-row>
-          <el-row class="name">
-            <h3>框架系统登录</h3>
-          </el-row>
-          <el-form ref="user" :model="user" label-width="80px">
-            <el-form-item>
-              <el-input v-model="user.name" placeholder="用户名" size="medium" style="padding-bottom: 5px;">
-                <el-col slot="prefix" class="loginIcon icon-user"></el-col>
-              </el-input>
-            </el-form-item>
-            <el-form-item>
-              <el-input type="password" v-model="user.password" placeholder="密码" size="medium"  style="padding-bottom: 5px;">
-                <el-col slot="prefix" class="loginIcon icon-password"></el-col>
-              </el-input>
-            </el-form-item>
-            <el-row style="padding:7px 0 7px 0">
-              <el-form-item>
-                <el-checkbox label="记住密码" name="type"></el-checkbox>
-                <a class="forget_password">忘记密码</a>
-              </el-form-item>
-            </el-row>
-            <el-form-item>
-              <el-button type="primary" @click="loginIn" style="width:100%;font-size: 18px;">登录</el-button>
-            </el-form-item>
-          </el-form>
+  <div class="container demo-1" style="height: 100%;">
+    <div class="content" style="height: 100%;">
+      <div id="large-header" class="large-header" style="height: 100%;">
+        <canvas id="demo-canvas"></canvas>
+        <div class="logo_box">
+          <h3>欢迎登录</h3>
+          <form action="#" name="f" method="post">
+            <div class="input_outer">
+              <span class="u_user"></span>
+              <input v-model="user.name" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+            </div>
+            <div class="input_outer">
+              <span class="us_uer"></span>
+              <input v-model="user.password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" type="password" placeholder="请输入密码">
+            </div>
+            <div class="mb2" @click="loginIn"><a class="act-but submit" href="javascript:;" style="color: #FFFFFF">登录</a></div>
+          </form>
         </div>
-      </el-main>
-    </el-container>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -57,7 +44,15 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
+  @import './css/normalize.css';
+  @import './css/demo.css';
+  @import './css/component.css';
+  input:-webkit-autofill , textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    border: 1px solid #CCC!important;
+  }
+
   .login .el-input__inner{
     padding-left: 36px;
   }

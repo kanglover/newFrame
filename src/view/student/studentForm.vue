@@ -7,7 +7,7 @@
       <el-input v-model="form.age"></el-input>
     </el-form-item>
     <el-form-item label="身份证号" class="item">
-      <el-input v-model="form.idCard"></el-input>
+      <el-input v-model="form.idcard"></el-input>
     </el-form-item>
     <el-form-item label="出生日期" class="item">
       <el-col :sapn="24">
