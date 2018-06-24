@@ -83,7 +83,7 @@ export default [
   },
   {
     path: '/teacher/teacherList',
-    name: 'teacher',
+    name: 'teacherList',
     component: () => import('../view/teacher/teacherList'),
     meta: {
       title: '教师管理',
@@ -92,7 +92,7 @@ export default [
   },
   {
     path: '/formDesign/Addform',
-    name: 'formDesign',
+    name: 'fromDesignForm',
     component: () => import('../view/formDesign/formDesign'),
     meta: {
       title: '表单设计',
