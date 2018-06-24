@@ -19,10 +19,11 @@ export default [
   },
   {
     path: '/user/userList',
-    name: 'user',
+    name: 'userList',
     component: () => import('../view/user/userList'),
     meta: {
-      title: '用户管理'
+      title: '用户管理',
+      name: 'userList'
     }
   },
   {
@@ -30,7 +31,8 @@ export default [
     name: 'userAdd',
     component: () => import('../view/user/userAdd'),
     meta: {
-      title: '新增用户'
+      title: '新增用户',
+      name: 'userAdd'
     }
   },
   {
@@ -38,7 +40,8 @@ export default [
     name: 'userDisplay',
     component: () => import('../view/user/userDisplay'),
     meta: {
-      title: '查看用户'
+      title: '查看用户',
+      name: 'userDisplay'
     }
   },
   {
@@ -46,15 +49,17 @@ export default [
     name: 'userEdit',
     component: () => import('../view/user/userEdit'),
     meta: {
-      title: '修改用户'
+      title: '修改用户',
+      name: 'userEdit'
     }
   },
   {
     path: '/role/roleList',
-    name: 'role',
+    name: 'roleList',
     component: () => import('../view/role/roleList'),
     meta: {
-      title: '角色管理'
+      title: '角色管理',
+      name: 'roleList'
     }
   },
   {
@@ -62,7 +67,8 @@ export default [
     name: 'roleAdd',
     component: () => import('../view/role/roleAdd'),
     meta: {
-      title: '新增角色'
+      title: '新增角色',
+      name: 'roleAdd'
     }
   },
   {
@@ -70,7 +76,8 @@ export default [
     name: 'roleDisplay',
     component: () => import('../view/role/roleDisplay'),
     meta: {
-      title: '查看角色'
+      title: '查看角色',
+      name: 'roleDisplay'
     }
   },
   {
@@ -78,7 +85,8 @@ export default [
     name: 'roleEdit',
     component: () => import('../view/role/roleEdit'),
     meta: {
-      title: '修改角色'
+      title: '修改角色',
+      name: 'roleEdit'
     }
   },
   {

@@ -72,8 +72,11 @@ export default {
       this.back()
     },
     back() {
-      this.$router.go(-1)
-      this.form = {}
+      this.$store.dispatch('deleteTab', {
+        route: this.$route
+      }).then(() => {
+        this.$router.back()
+      })
     }
   }
 }
