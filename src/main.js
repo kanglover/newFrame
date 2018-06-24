@@ -23,6 +23,11 @@ new Vue({
   el: '#app',
   router,
   store,
+  data() {
+    return {
+      Bus: new Vue()
+    }
+  },
   components: { App },
   template: '<App/>'
 })
