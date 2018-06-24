@@ -2,10 +2,10 @@
   <div class="roleForm">
     <el-form ref="form" :model="form" label-width="80px" style="margin: 20px auto;width: 80%;">
       <el-row>
-        <el-col :span="12"><el-form-item label="序号">
-          <el-input size="medium" v-model="form.id" clearable></el-input>
-        </el-form-item></el-col>
-        <el-col :span="12"><el-form-item label="姓名">
+        <!--<el-col :span="12"><el-form-item label="序号">-->
+          <!--<el-input size="medium" v-model="form.id" clearable></el-input>-->
+        <!--</el-form-item></el-col>-->
+        <el-col :span="12"><el-form-item label="角色名">
           <el-input size="medium" v-model="form.name" clearable></el-input>
         </el-form-item></el-col>
       </el-row>
@@ -27,7 +27,6 @@ export default {
   data() {
     return {
       form: {
-        id: '',
         name: ''
       }
     }
@@ -42,8 +41,11 @@ export default {
       this.back()
     },
     back() {
-      this.$router.go(-1)
-      this.form = {}
+      this.$store.dispatch('deleteTab', {
+        route: this.$route
+      }).then(() => {
+        this.$router.back()
+      })
     }
   }
 }
