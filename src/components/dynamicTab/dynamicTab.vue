@@ -22,7 +22,11 @@ export default {
         this.$store.dispatch('deleteTab', {
           tab: {name, path, title}
         }).then(() => {
-          this.$router.push(this.$store.state.tabs.visitedTabs[this.$store.state.tabs.visitedTabs.length - 1])
+          if (this.$store.state.tabs.visitedTabs.length === 0) {
+            this.$router.push({path: '/main'})
+          } else {
+            this.$router.push(this.$store.state.tabs.visitedTabs[this.$store.state.tabs.visitedTabs.length - 1])
+          }
         })
       }
       event.preventDefault()

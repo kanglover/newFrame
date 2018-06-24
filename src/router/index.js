@@ -15,6 +15,7 @@ export default new Router({
     },
     {
       path: '/main',
+      name: 'main',
       component: () => import('../view/main/main.vue'),
       children: [
         ...main
